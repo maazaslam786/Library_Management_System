@@ -1,0 +1,87 @@
+/* Sidebar container wrapping both the sidebar and toggle button */
+.sidebar-container {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+  
+  /* Sidebar styles */
+  .custom-sidebar {
+    position: fixed; /* Ensures the sidebar stays on the left */
+    top: 0;
+    left: 0;
+    width: 19%;
+    height: 100vh;
+    background: black;
+    color: rgba(255, 240, 240, 0.95);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%); /* Hidden initially */
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
+    border-radius: 4%;
+    border-right: 1px solid #2e020c;
+  }
+  
+  .custom-sidebar.open {
+    transform: translateX(0); /* Slide in */
+  }
+  
+  .custom-sidebar h2 {
+    margin-bottom: 20%;
+    padding: 3% 0;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .custom-sidebar ul {
+    list-style: none;
+    padding: 0 10%;
+    margin: 0;
+  }
+  
+  .custom-sidebar ul li {
+    margin: 10% 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .custom-sidebar ul li:hover {
+    color: #fd154b;
+    transform: translateX(10px);
+  }
+
+  .menu-container{
+    margin-top: 1%;
+    background: linear-gradient(90deg, #fd154b, #f84336, #fd154b);
+    border-radius: 3%;
+  }
+  
+  /* Toggle button styles */
+  .toggle-btn {
+    font-weight: bolder;
+    position: fixed; /* Stays next to the sidebar */
+    top: 45%;
+    left: 1%; /* Default position */
+    z-index: 110; /* Above the sidebar */
+    background: linear-gradient(90deg, #fd154b, #f84336, #fd154b);
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    padding: 1.1% 1.5%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease, left 0.3s ease;
+  }
+  
+  .sidebar-container.open .toggle-btn {
+    left: 20%; /* Moves with the sidebar */
+  }
+  
+  .toggle-btn:hover {
+    background: linear-gradient(90deg, #ff667a, #ff816c, #ff667a);
+    color: #ffffffe0;
+    transform: scale(1.1);
+  }
+  
