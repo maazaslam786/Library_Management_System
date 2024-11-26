@@ -1,0 +1,147 @@
+-- create database lms;
+use lms;
+
+-- create table membership (
+--     M_name varchar(20) PRIMARY KEY,
+--     M_status enum('Active', 'Inactive'),
+--     Books_allowed integer,
+--     Price integer,
+--     Borrowed_time_days int,
+--     Fine_rate float,
+--     Ext integer,
+--     Reserv_count integer
+-- );
+
+-- create table book (
+-- 	Book_id integer auto_increment PRIMARY KEY,
+--     Title varchar(50),
+-- 	Author varchar(30),
+--     ISBN varchar(20) UNIQUE,
+--     Books_count integer,
+--     B_status enum('enough avaialble', 'more requested', 'more copies required'),
+--     Publisher varchar(50),
+--     Genre varchar(20),
+--     Outgoing_copies integer DEFAULT 0
+-- );
+
+-- create table staff(
+-- 	Staff_id varchar(10) PRIMARY KEY,
+-- 	Pass varchar(50),
+-- 	S_name varchar(30),
+-- 	Phone varchar(20),
+-- 	Email varchar(30) UNIQUE,
+-- 	Address varchar(50)
+-- );
+
+-- create table admin(
+-- 	Admin_id varchar(10),
+-- 	Pass varchar(50)
+-- );
+
+-- INSERT INTO membership(M_name, M_status, Books_allowed, Price, Borrowed_time_days, Fine_rate, Ext, Reserv_count) VALUES ('Silver', 'Active', 1, 0, 14, 5, 0, 0);
+-- INSERT INTO membership(M_name, M_status, Books_allowed, Price, Borrowed_time_days, Fine_rate, Ext, Reserv_count) VALUES ('Gold', 'Active', 2, 50, 21, 3, 7, 2);
+-- INSERT INTO membership(M_name, M_status, Books_allowed, Price, Borrowed_time_days, Fine_rate, Ext, Reserv_count) VALUES ('Platinum', 'Active', 4, 100, 28, 1, 14, 4);
+
+
+-- SELECT * FROM membership;
+-- SELECT * FROM book;
+
+-- create table user(
+-- 	userID varchar(10) PRIMARY KEY,
+--     userName varchar(20),
+--     pass varchar(50),
+--     Membership varchar(20),
+--     Phone varchar(20),
+--     Email varchar(20),
+--     Address varchar(30),
+--     Membership_start datetime,
+--     Membership_end datetime,
+--     FOREIGN KEY (Membership) REFERENCES membership(M_name)
+-- );
+
+-- create table borrow(
+-- 	borrowID varchar(10) PRIMARY KEY,
+--     Book_id integer,
+--     Borrowed_by varchar(10),
+--     Approved_by varchar(10),
+--     BorrowDate datetime,
+--     ReturnDate datetime,
+--     FOREIGN KEY (Book_id) REFERENCES book(Book_id),
+--     FOREIGN KEY (Borrowed_by) REFERENCES user(userID),
+--     FOREIGN KEY (Approved_by) REFERENCES staff(Staff_id)
+-- );
+
+
+-- create table reservation(
+-- 	ReservID varchar(10),
+--     Book_id integer,
+--     Reserved_by varchar(10),
+--     Approved_by varchar(10),
+--     ReservDate datetime,
+--     Status enum('completed','cancelled','delayed'),
+-- 	FOREIGN KEY (Book_id) REFERENCES book(Book_id),
+--     FOREIGN KEY (Reserved_by) REFERENCES user(userID),
+--     FOREIGN KEY (Approved_by) REFERENCES staff(Staff_id)
+-- );
+
+-- create table bookReq(
+-- 	reqID varchar(10) PRIMARY KEY,
+--     requested_by varchar(10),
+--     message varchar(50),
+--     bookTitle varchar(30),
+--     author varchar(20),
+--     publisher varchar(20),
+--     FOREIGN KEY (requested_by) REFERENCES user(userID)
+-- );
+
+-- CREATE TABLE sequences (
+--     sequence_name VARCHAR(50) NOT NULL,
+--     current_value INT NOT NULL,
+--     character_prefix VARCHAR(10) NOT NULL,
+--     PRIMARY KEY (sequence_name)
+-- );
+
+-- INSERT INTO sequences (sequence_name, current_value, character_prefix)
+-- VALUES 
+--     ('us_sequence', 0, 'US'),
+--     ('st_sequence', 0, 'ST'),
+--     ('br_sequence', 0 , 'BR'),
+-- 	('rs_sequence', 0 , 'RS'),
+-- 	('rq_sequence', 0, 'RQ'),
+--     ('ad_sequence', 0 , 'AD');
+
+-- select * from sequences;
+
+-- DELIMITER $$ 
+-- CREATE PROCEDURE seq_next_value(sequence VARCHAR(50), out formatted_value VARCHAR(10))
+-- BEGIN
+--     DECLARE next_value INT;
+-- 	DECLARE prefix VARCHAR(10);
+--      
+--     UPDATE sequences
+--     SET current_value = current_value + 1
+--     WHERE sequence_name = sequence;
+--     
+--     SELECT current_value, character_prefix INTO next_value,prefix
+--     FROM sequences
+--     WHERE sequence_name = sequence;
+--     
+--     SET formatted_value = CONCAT(prefix,'-', LPAD(next_value, 3, '0'));    
+-- END $$
+-- DELIMITER ;
+
+-- DELIMITER $$
+
+-- INSERT INTO book (Title, Author, ISBN, Publisher, Genre, Books_count,B_status ) VALUES
+-- ('The Catcher in the Rye', 'J.D. Salinger', '978-0-316-76948-0', 'Little, Brown and Company', 'Fiction',2,'enough avaialble'),
+-- ('To Kill a Mockingbird', 'Harper Lee', '978-0-06-112008-4', 'J.B. Lippincott & Co.', 'Fiction',1,'enough avaialble'),
+-- ('1984', 'George Orwell', '978-0-452-28423-4', 'Secker & Warburg', 'Dystopian',1,'enough avaialble'),
+-- ('The Great Gatsby', 'F. Scott Fitzgerald', '978-0-7432-7356-5', 'Charles Scribner''s Sons', 'Classic',4,'enough avaialble'),
+-- ('Pride and Prejudice', 'Jane Austen', '978-1-85326-000-1', 'T. Egerton', 'Romance',1,'enough avaialble'),
+-- ('The Hobbit', 'J.R.R. Tolkien', '978-0-618-00221-3', 'George Allen & Unwin', 'Fantasy',3,'enough avaialble'),
+-- ('Harry Potter and the Sorcerer''s Stone', 'J.K. Rowling', '978-0-545-01022-1', 'Scholastic', 'Fantasy',8,'enough avaialble'),
+-- ('The Da Vinci Code', 'Dan Brown', '978-0-385-50420-8', 'Doubleday', 'Thriller',2,'enough avaialble'),
+-- ('The Alchemist', 'Paulo Coelho', '978-0-06-112241-5', 'HarperOne', 'Fiction',5,'enough avaialble');
+
+-- select * from book;
+
