@@ -1,0 +1,26 @@
+footer {
+    background-color: black;
+    padding: 16px 0px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+}
+
+footer span {
+    padding-right: 570px;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    padding-left: 18px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
