@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.search-contain{
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke
+}
+
+.search-banner {
+    display: flex;
+    align-items: flex-end;
+    padding: 80px 0;
+    width: 100%;
+    height: 350px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+        url(../assets/searchbg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.search-tag {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 50px;
+    text-shadow: 0px 6px 20px rgba(253, 21, 75, 0.2);
+}
+
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: linear-gradient(90deg, #f84336, #fd154b, #f84336);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.dropdown {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.dropdown:focus {
+    outline: none;
+}
+
+.search-input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    background-color: white;
+    color: #fd154b;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    border: none;
+    transition: transform 0.3s ease;
+    transition: box-shadow 0.3s ease;
+}
+
+.search-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-button:hover i {
+    animation: rotate 0.3s ease;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.search-icon {
+    font-size: 16px;
+}
+
+.genre-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.genre-checkboxes label {
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.genre-checkboxes input {
+    accent-color: #fd154b;
+    margin-right: 5px;
+}
+
+.genre-checkboxes input:checked {
+    transform: scale(1.2);
+}
+
+.genre-checkboxes label:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.empty{
+    width: 100%;
+    height: 80px;
+}
+
+.noBooks{
+    display: flex;
+    color: #333;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 20px;
+}

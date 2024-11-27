@@ -1,0 +1,13 @@
+.bg{
+    height: 600px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -1;
+    background: linear-gradient(to bottom,rgba(0,0,0,1), rgba(0,0,0,0.4)),
+    url("../assets/background.jpeg");
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+}

@@ -1,25 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import BorrowForm from './components/BorrowForm';
+import ReservationForm from './components/ReservationForm';
 import BookList from './components/BookList';
-import BorrowHistory from './components/BorrowHistory';
-import ReserveBookForm from './components/ReserveBookForm';
+import Dashboard from './components/Dashboard';
 
 function App() {
-    return (
-        <Router>
-            <Header />
-            <main>
-                <Routes>
-                    <Route path="/" element={<BookList />} />
-                    <Route path="/borrow-history" element={<BorrowHistory />} />
-                    <Route path="/reserve-book" element={<ReserveBookForm />} />
-                </Routes>
-            </main>
-            <Footer />
-        </Router>
-    );
+  return (
+    <div>
+      <h1>Library Management System</h1>
+      <BorrowForm />
+      <ReservationForm />
+      <BookList />
+      <Dashboard />
+    </div>
+  );
 }
 
 export default App;

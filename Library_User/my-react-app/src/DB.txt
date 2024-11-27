@@ -112,7 +112,7 @@ use lms;
 
 -- select * from sequences;
 
--- DELIMITER $$ 
+-- DELIMITER $$ ase
 -- CREATE PROCEDURE seq_next_value(sequence VARCHAR(50), out formatted_value VARCHAR(10))
 -- BEGIN
 --     DECLARE next_value INT;

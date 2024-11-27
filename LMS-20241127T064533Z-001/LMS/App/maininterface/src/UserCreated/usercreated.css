@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+.user-created-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+        url("../assets/bg1.jpg") no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+}
+
+.contain {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
+    padding: 20px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255,0.2);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+}
+.contain .title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-bottom: 20px;
+}
+.contain .img-contain{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 170px;
+}
+.contain .img-contain img{
+    left: 25%;
+    position: absolute;
+    width: 100%;
+    transition: opacity 3s ease;
+}
+
+.checkmark{
+    z-index: 1;
+    opacity: 0;
+}
+.userID{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 10px 0 10px;
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+.contain .login-link{
+    font-size: 15px;
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
+.login-link p a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link p a:hover{
+    text-decoration: underline;
+}

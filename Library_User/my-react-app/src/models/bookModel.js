@@ -1,28 +1,15 @@
-const { readDB, writeDB } = require("../services/db");
+const db = require('../config/db');
 
-const getBooks = () => {
-    const db = readDB();
-    return db.books;
+const getAllBooks = (callback) => {
+  db.query('SELECT * FROM book', callback);
 };
 
-const getBookById = (id) => {
-    const db = readDB();
-    return db.books.find(book => book.id === id);
+const borrowBook = (bookId, callback) => {
+  db.query('UPDATE book SET Books_count = Books_count - 1 WHERE Book_id = ?', [bookId], callback);
 };
 
-const addReservation = (username, bookId) => {
-    const db = readDB();
-    const user = db.users.find(user => user.username === username);
-    if (user) {
-        user.reservations.push(bookId);
-        writeDB(db);
-    }
+const updateBookStatus = (bookId, status, callback) => {
+  db.query('UPDATE book SET B_status = ? WHERE Book_id = ?', [status, bookId], callback);
 };
 
-const requestBook = (bookRequest) => {
-    const db = readDB();
-    db.bookRequests.push(bookRequest);
-    writeDB(db);
-};
-
-module.exports = { getBooks, getBookById, addReservation, requestBook };
+module.exports = { getAllBooks, borrowBook, updateBookStatus };

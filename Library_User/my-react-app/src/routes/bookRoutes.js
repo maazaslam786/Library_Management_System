@@ -1,23 +1,11 @@
-const express = require("express");
-const { getAllBooks, reserveBook, addBookRequest } = require("../controllers/booksController");
-
+const express = require('express');
+const { getBorrowedBooks, requestBook } = require('../controllers/bookController');
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    const books = getAllBooks();
-    res.status(200).json(books);
-});
+// Route for getting borrowed books of a user
+router.get('/borrowed/:userId', getBorrowedBooks);
 
-router.post("/reserve", (req, res) => {
-    const { username, bookId } = req.body;
-    const result = reserveBook(username, bookId);
-    res.status(result.success ? 200 : 400).json(result);
-});
-
-router.post("/request", (req, res) => {
-    const { username, bookName } = req.body;
-    const result = addBookRequest(username, bookName);
-    res.status(200).json(result);
-});
+// Route for requesting a book for borrowing
+router.post('/request', requestBook);
 
 module.exports = router;
