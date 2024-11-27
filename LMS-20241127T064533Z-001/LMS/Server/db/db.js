@@ -1,12 +1,12 @@
 const mysql = require('mysql2');
-// const pass =require('./pass.js')
+require('dotenv').config();
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  multipleStatements: true,
-  database: 'lms'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME,
+  multipleStatements: true
 });
 
 module.exports = pool.promise();

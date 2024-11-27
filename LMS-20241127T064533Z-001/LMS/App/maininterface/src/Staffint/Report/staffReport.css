@@ -1,0 +1,48 @@
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+.generate-report-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.generate-report-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.table-data-container {
+    overflow-x: auto;
+}
+
+.table-data {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.table-data th {
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #000000;
+}
+
+.table-data td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+}
+
+.table-data tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
