@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+.signup-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+        url("../assets/bg1.jpg") no-repeat;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.container {
+    max-width: 700px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px 30px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255,0.2);
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+
+}
+
+.container .title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+.container form span{
+    color: #ffffff;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255,0.2);
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    color: #ffffff;
+}
+
+.user-details .input-box input::placeholder{
+    color: #ffffff;
+}
+
+form .button{
+    height: 45px;
+    width: 45px 0;
+}
+
+form .button input{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #fd154b, #f84336, #fd154b);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+form .button input:hover{
+    box-shadow: 0px 6px 20px rgba(253, 21, 75, 0.7);
+}
+
+.container .login-link{
+    font-size: 15px;
+    margin: 20px 0 15px;
+}
+
+.login-link p a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link p a:hover{
+    text-decoration: underline;
+}
+
+#notmatch, #dupEmail, #invPhone, #dupPhone, #dupAltphone, #dupNIC, #dupFax, #dupCompName , #sameFax, #samePhone, #extPhone, #invNIC, #extNIC{
+    color: red;
+    font-weight: 600;
+}
